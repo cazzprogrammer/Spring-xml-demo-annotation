@@ -15,10 +15,15 @@ public class App
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(Appconfig.class);
         context.refresh();
-        Movie movie = context.getBean(Movie.class);
-        System.out.println("Actor name : " + movie.getActor().getName());
-        System.out.println("Actor gender : " + movie.getActor().getGender());
-        System.out.println("Actor age : " + movie.getActor().getAge());
+
+        Movie movie1 = context.getBean("MovieA",Movie.class);
+        Movie movie2 = context.getBean("MovieB",Movie.class);
+
+        System.out.println(movie1 == movie2);
+
+
+
+
         context.close();
     }
 }
