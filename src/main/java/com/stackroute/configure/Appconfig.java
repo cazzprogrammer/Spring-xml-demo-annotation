@@ -1,5 +1,7 @@
 package com.stackroute.configure;
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -24,6 +26,16 @@ public class Appconfig {
     {
         Actor actor = new Actor("sadsdsd","Male",23);
         return actor;
+    }
+    @Bean(initMethod = "customInit",destroyMethod = "customDestroy")
+    public BeanLifecycleDemoBean get() {
+        return new BeanLifecycleDemoBean();
+    }
+
+    @Bean
+    public BeanPostProcessorDemoBean getagain()
+    {
+        return new BeanPostProcessorDemoBean();
     }
 
 

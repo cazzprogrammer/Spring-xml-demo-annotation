@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.configure.Appconfig;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,11 +18,9 @@ public class App
         context.refresh();
 
         Movie movie = context.getBean(Movie.class);
-
-
+        
+        BeanPostProcessorDemoBean beanPostProcessorDemoBean = context.getBean(BeanPostProcessorDemoBean.class);
         System.out.println(movie);
-
-
 
         context.close();
     }
