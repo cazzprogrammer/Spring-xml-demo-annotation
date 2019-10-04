@@ -15,7 +15,7 @@ public class Appconfig {
     @Bean
     public Actor getActor()
     {
-        Actor actor = new Actor("Dipankar","Male",23);
+        Actor actor = new Actor("Dipanaakar","Male",23);
         return actor;
     }
 
