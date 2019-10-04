@@ -16,11 +16,10 @@ public class App
         context.register(Appconfig.class);
         context.refresh();
 
-        Movie movie1 = context.getBean("MovieA",Movie.class);
-        Movie movie2 = context.getBean("MovieB",Movie.class);
+        Movie movie = context.getBean(Movie.class);
 
-        System.out.println(movie1 == movie2);
 
+        System.out.println(movie);
 
 
 

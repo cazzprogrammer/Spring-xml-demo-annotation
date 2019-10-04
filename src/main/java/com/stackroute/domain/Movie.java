@@ -5,27 +5,28 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Movie {
-    private Actor actor;
-
     @Autowired
-    public Movie(Actor actor)
+    private Actor getActor;
+
+
+    public Movie(Actor getActor)
     {
-        this.actor = actor;
+        this.getActor = getActor;
     }
 
 
-    public void setActor(Actor actor)
+    public void setActor(Actor getActor)
     {
-        this.actor = actor;
+        this.getActor = getActor;
     }
 
     public Actor getActor() {
-        return actor;
+        return getActor;
     }
 
     @Override
     public String toString()
     {
-        return "Movie :" + actor;
+        return "Movie :" + getActor;
     }
 }

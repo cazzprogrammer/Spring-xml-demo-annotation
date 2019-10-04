@@ -19,14 +19,12 @@ public class Appconfig {
         return actor;
     }
 
-
-
-    @Bean({"MovieA","MovieB"})
-    @Scope("prototype")
-    public Movie movie()
+    @Bean
+    public Actor actor()
     {
-        Movie movie = new Movie(getActor());
-        return movie;
+        Actor actor = new Actor("sadsdsd","Male",23);
+        return actor;
     }
+
 
 }
